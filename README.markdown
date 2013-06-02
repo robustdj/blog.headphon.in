@@ -1,38 +1,83 @@
-## What is Octopress?
+# headphon.in blog
 
-Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
+This is a blog built on the [Octopress](http://octopress.org) framework. The purpose of the blog is to radiate good music
+and information around the following genres: funk, jazz, hip hop, reggae, soul.
 
-1. **Octopress sports a clean responsive theme** written in semantic HTML5, focused on readability and friendliness toward mobile devices.
-2. **Code blogging is easy and beautiful.** Embed code (with [Solarized](http://ethanschoonover.com/solarized) styling) in your posts from gists, jsFiddle or from your filesystem.
-3. **Third party integration is simple** with built-in support for Pinboard, Delicious, GitHub Repositories, Disqus Comments and Google Analytics.
-4. **It's easy to use.** A collection of rake tasks simplifies development and makes deploying a cinch.
-5. **Ships with great plug-ins** some original and others from the Jekyll community &mdash; tested and improved.
+## Adding a Post
+
+Right now, posts can only be added to the blog by creating a markdown file and deploying to the site. To reduce the amount of
+steps, we'll start by having contributors of the blog e-mail [Derrick](mailto:robustdj@gmail.com). The e-mail should include:
+
+1. The title of the post
+2. Any categories associated with the post i.e. **funk**, **jazz**, **concert**, **samples**, etc.
+3. The body of the post written in markdown
+
+## What is markdown?
+
+Posts are written in [markdown](http://daringfireball.net/projects/markdown/syntax). Quoted from Daring Fireball:
+
+> Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+>
+> Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain
+> text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been
+> influenced by several existing text-to-HTML filters — including Setext, atx, Textile, reStructuredText, Grutatext, and
+> EtText — the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
+
+## Common Markdown and Octopress Idioms
+
+### Headers
+
+```
+# This is an h1
+
+## This is an h2
+
+###### This is an h6
+```
+
+### Embedding a youtube video
+
+`DGnu1DYv9wE` is the youtube id
 
 
-## Documentation
+```
+{% youtube DGnu1DYv9wE %}
+```
 
-Check out [Octopress.org](http://octopress.org/docs) for guides and documentation.
+### Embedding a soundcloud sound
 
+```
+{% soundcloud 94628617 %}
+```
 
-## Contributing
+When viewing a soundcloud sound, you can find the soundcloud id by:
 
-[![Build Status](https://travis-ci.org/imathis/octopress.png?branch=master)](https://travis-ci.org/imathis/octopress)
+- clicking `Share`
+- click on the `Wordpress Code` textfield
+- find the text that looks like this `http://api.soundcloud.com/tracks/94628617`
+- the text after `/tracks/` is the id
 
-We love to see people contributing to Octopress, whether it's a bug report, feature suggestion or a pull request. At the moment, we try to keep the core slick and lean, focusing on basic blogging needs, so some of your suggestions might not find their way into Octopress. For those ideas, we started a [list of 3rd party plug-ins](https://github.com/imathis/octopress/wiki/3rd-party-plugins), where you can link your own Octopress plug-in repositories. For the future, we're thinking about ways to easier add them them into our main releases.
+### Embedding raw HTML
 
+```
+{% raw %}
 
-## License
-(The MIT License)
+<table>
+  <tr>
+    <td>Table column 1</td>
+  </tr>
+</table>
 
-Copyright © 2009-2013 Brandon Mathis
+{% endraw %}
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+### Embedding images
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+It's better to upload images to the server and link to that image as opposed to linking to an image on an external server.
+However, for the purpose of reference here's an example:
 
-THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+{% img http://getitstickit.com/11327-large_default/wired-headphones-music-dj-wall-stickers-wall-art-decal-02.jpg }
+```
 
-
-#### If you want to be awesome.
-- Proudly display the 'Powered by Octopress' credit in the footer.
-- Add your site to the Wiki so we can watch the community grow.
+For more markdown syntax, visit [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
