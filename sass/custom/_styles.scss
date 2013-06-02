@@ -1,0 +1,65 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+$green: #5c8c00;
+
+@font-face {
+  font-family: "Hero";
+  src: url('font/Hero.otf');
+}
+
+html {
+  background: $page-bg image-url('bg.png') top left;
+}
+
+body > nav {
+  background: #592782;
+  background-color: #592782;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#4D226D), to(#592782));
+  background-image: -moz-linear-gradient(top, #4D226D, #592782);
+  background-image: -ms-linear-gradient(top, #4D226D, #592782);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4D226D), color-stop(100%, #592782));
+  background-image: -webkit-linear-gradient(top, #4D226D, #592782);
+  background-image: -o-linear-gradient(top, #4D226D, #592782);
+  background-image: linear-gradient(top, #4D226D, #592782);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+
+  li+li {
+    border: none;
+
+    a {
+      border: none;
+    }
+  }
+
+  ul.main-navigation {
+    li {
+      a {
+        text-shadow: none;
+        color: white;
+        font-family: 'Hero';
+        span {
+          color: $green;
+          font-size: 24px;
+          margin: 0 2px;
+        }
+      }
+    }
+  }
+}
+
+body > header {
+  h1 {
+    a, a:visited, a:hover {
+      font-family: "Hero";
+      font-size: 52px;
+      span {
+        color: $green;
+      }
+    }
+  }
+}
